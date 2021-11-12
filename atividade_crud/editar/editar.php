@@ -22,7 +22,10 @@ var_dump($resultados);
             <h2>Edição</h2>
         </div>
         <div class="card-body">
-            <form method="post" action="">
+            <form method="post" action="./acaoEditar.php">
+
+                <input type="hidden" name="cod_pessoa" id="cod_pessoa" value="<?php echo $produtoId ?>">
+
                 <input class="form-control" type="text" placeholder="Digite o nome" name="nome" id="nome" value="<?php echo $resultados["nome"] ?>">
                 <br />
                 <input class="form-control" type="text" placeholder="Digite o sobrenome" name="sobrenome" id="sobrenome" value="<?php echo $resultados["sobrenome"] ?>">
