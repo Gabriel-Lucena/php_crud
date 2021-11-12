@@ -1,11 +1,29 @@
 <?php
+
+session_start();
+
 include('../componentes/header.php');
 
 require('../database/conexao.php');
 
+require('../login/verificarLogin.php');
+
+
+verificarLogin($_SESSION["id"]) == false ? header('location: ../login'): null;
+
+// if (isset($_SESSION["id"]) == false) {
+//     header('location: ../login');
+// };
+
+// if (verificarLogin($_SESSION["id"], session_id()) == true) {} else {header('location: ../login');};
+
 $sql = "SELECT * FROM tbl_pessoa";
 
 $pessoas = mysqli_query($conexao, $sql);
+
+var_dump($_SESSION["id"]);
+var_dump(session_id());
+
 
 ?>
 
