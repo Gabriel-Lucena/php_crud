@@ -43,8 +43,8 @@ $pessoas = mysqli_query($conexao, $sql);
                             <input type="hidden" name="cod_pessoa" value="<?php echo $resultado["cod_pessoa"] ?>">
                             <button class="btn btn-warning">Editar</button>
                         </form>
-                        <form action="" method="post" style="display: inline;">
-                            <input type="hidden" name="id" value="">
+                        <form action="../acaoExcluir" method="get" style="display: inline;">
+                            <input type="hidden" name="cod_pessoa" value="<?php echo $resultado["cod_pessoa"] ?>">
                             <button class="btn btn-danger">Excluir</button>
                         </form>
                     </th>
