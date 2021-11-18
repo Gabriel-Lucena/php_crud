@@ -23,19 +23,31 @@ function logar($vetor, $nome, $senha)
     }
 }
 
-switch ($acao) {
-    case "login":
+if (isset($acao)) {
+    $nome = $_POST["nome"];
+    $senha = $_POST["senha"];
 
-        $nome = $_POST["nome"];
-        $senha = $_POST["senha"];
+    $sql = "SELECT * FROM tbl_administrador WHERE nome = '$nome' and senha = '$senha'";
 
-        $sql = "SELECT * FROM tbl_administrador WHERE nome = '$nome' and senha = '$senha'";
+    $resultado = mysqli_query($conexao, $sql);
 
-        $resultado = mysqli_query($conexao, $sql);
+    $vetor = mysqli_fetch_array($resultado);
 
-        $vetor = mysqli_fetch_array($resultado);
+    logar($vetor, $nome, $senha);
+} else {
 
-        logar($vetor, $nome, $senha);
+    // Caso não seja login
 
-        break;
+    session_start();
+
+    session_unset();
+
+    session_destroy();
+
+    header('location: ./index.php');
+
+    // Final do logout
+
 }
+
+?>
