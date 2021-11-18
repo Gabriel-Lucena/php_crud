@@ -36,7 +36,7 @@
 
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="../login/logout.php">Sair</a>
+            <a class="nav-link" href="../login/processaLogin.php">Sair</a>
         </li>
         
     </ul>
