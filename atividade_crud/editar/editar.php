@@ -10,10 +10,7 @@ $sql = "SELECT * FROM tbl_pessoa WHERE cod_pessoa = $produtoId";
 $resultado = mysqli_query($conexao, $sql);
 $resultados = mysqli_fetch_array($resultado);
 
-var_dump($produtoId);
-var_dump($resultados);
 ?>
-
 
 <div class="container">
     <hr>
