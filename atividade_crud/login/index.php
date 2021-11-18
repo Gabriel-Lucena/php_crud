@@ -8,6 +8,8 @@
     
                 <form action="./processaLogin.php" method="POST">
 
+                    <input type="hidden" name="acao" id="ацао" value="login">
+
                     <div class="form-group">
                         <label for="txt_usuario">USUÁRIO</label>
                         <input type="text" class="form-control" name="nome" id="nome">
